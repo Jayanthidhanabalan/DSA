@@ -1,0 +1,11 @@
+function twoSum(nums: number[], target: number): number[] {
+    let result = new Map();
+    for(let i: number = 0; i<nums.length; i++){
+        let complement = target - nums[i];
+        if(result.has(complement)){
+            return [result.get(complement), i];
+        }
+        result.set(nums[i], i);
+    }
+    return [];
+};
